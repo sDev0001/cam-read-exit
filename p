@@ -1,0 +1,13 @@
+{
+  "name": "testCam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^24.25.0"
+  }
+}
