@@ -52,3 +52,31 @@ testBQSAPI().catch(error => {
   console.error('Test script failed:', error);
   process.exit(1);
 });
+
+
+
+
+
+In momentul sosirii a camiounului la bariera de intrare in parcare apelati:
+
+curl -X POST 'https://apibqs.customs.gov.md/external/customs/parkings/check-access' \
+  -H 'accept: application/json' \
+  -H 'accept-language: en' \
+  -H 'authorization: Bearer secret_token' \
+  --data-raw '{"plate_number":"ABC123","timestamp":"1731455920934","camera_id":"1400000003311"}'
+
+
+In momentul sosirii a camiounului la bariera de iesire din parcare apelati:
+
+curl -X POST 'https://apibqs.customs.gov.md/external/customs/parkings/check-access' \
+  -H 'accept: application/json' \
+  -H 'accept-language: en' \
+  -H 'authorization: Bearer secret_token' \
+  --data-raw '{"plate_number":"ABC123","timestamp":"1731455920934","camera_id":"1500000003301"}'
+
+platenumber: se inidica numarul camionul citit de camera
+timestamp: se indica timestamp-ul cind a fost citit camionul
+camera_id: asa si ramine statica
+secret_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.0c9ARmIxapO7ZCbXQmEhk0iDM-c1rhe3PVYCKjiGGoM
+
+Dislay queue page URL: https://terminal.bqs.dev.devebs.net/MD203000/queue
